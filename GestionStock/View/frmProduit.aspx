@@ -1,9 +1,9 @@
-﻿<%@ Page Title="Product Management" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmProduit.aspx.cs" Inherits="GestionStock.View.frmProduit" %>
+﻿<%@ Page Title="Product" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmProduit.aspx.cs" Inherits="GestionStock.View.frmProduit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <!-- imported from register begin -->
 
-    <h2><%: Title %>.</h2>
+    
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
@@ -66,6 +66,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" Text="Ajouter" CssClass="btn btn-default" ID="btnAjouter" OnClick="btnAjouter_Click" />
+                <asp:Button runat="server" Text="Rechercher" CssClass="btn btn-success" ID="btnRechercher" OnClick="btnRechercher_Click"  />
             </div>
         </div>
 

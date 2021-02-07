@@ -87,6 +87,15 @@ namespace GestionStock.View
         protected global::System.Web.UI.WebControls.Button btnAjouter;
 
         /// <summary>
+        /// Contrôle btnRechercher.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRechercher;
+
+        /// <summary>
         /// Contrôle dgProduit.
         /// </summary>
         /// <remarks>

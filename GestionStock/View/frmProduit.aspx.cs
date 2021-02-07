@@ -40,7 +40,29 @@ namespace GestionStock.View
 
         protected void dgProduit_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtDescription.Text = dgProduit.SelectedRow.Cells[3].Text;
+            txtNom.Text = dgProduit.SelectedRow.Cells[2].Text;
+            txtQte.Text = dgProduit.SelectedRow.Cells[4].Text;
+            txtPu.Text = dgProduit.SelectedRow.Cells[5].Text;
+            txtQteSeuil.Text = dgProduit.SelectedRow.Cells[6].Text;
+            cbbCategorie.SelectedValue = dgProduit.SelectedRow.Cells[7].Text;
+        }
 
+        protected void btnRechercher_Click(object sender, EventArgs e)
+        {
+            var listep = db.Produit.ToList();
+            if (!string.IsNullOrEmpty(txtNom.Text))
+            {
+                listep = listep.Where(a => a.nomProduit.ToUpper().Contains(txtNom.Text.ToUpper())).ToList();
+
+            }
+            if (!string.IsNullOrEmpty(txtDescription.Text))
+            {
+                listep = listep.Where(a => a.descriptionProduit.ToUpper().Contains(txtDescription.Text.ToUpper())).ToList();
+
+            }
+            dgProduit.DataSource = listep.ToList();
+            dgProduit.DataBind();
         }
     }
 }
